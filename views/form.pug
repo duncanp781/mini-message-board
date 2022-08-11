@@ -1,0 +1,24 @@
+extends layout 
+
+block content 
+  style(type = 'text/css').
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    textarea{
+      resize: none;
+    }
+  h1 Create a message 
+  form(method="POST" action = '/new')
+    div
+      label Enter your name: 
+        br
+        input(type="text" name = 'userName')  
+    div
+      label Enter your message:  
+        br
+        textarea(cols="30", rows="10" name = 'userText') 
+    div
+      button(type="submit") Submit

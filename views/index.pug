@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  style(type = 'text/css').
+    .messages{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px;
+    }
+    .message{
+      padding: 16px;
+      border: 2px solid black;
+      width: fit-content;
+    }
+    .username{
+      font-weight: bold;
+    }
+
+  h1= title
+  p Welcome to #{title}
+  a(href = '/new') Write a message
+  div(class = 'messages')
+    each val in messages 
+      div(class = 'message')
+        div(class = 'username')= val.user 
+        div= val.text 
+        div= val.added
+        br 
